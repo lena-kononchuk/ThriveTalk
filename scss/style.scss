@@ -246,8 +246,13 @@ body {
       font-family: "Larsseit";
       font-weight: normal;
       color: #22356F;
-      max-width: 554px;
+      min-width: 554px;
    }
+
+}
+
+.-webkit-input-placeholder {
+   display: none;
 }
 
 //columns section
@@ -653,12 +658,16 @@ body {
    &__content {
       background-color: #fff;
       color: #000;
-      max-width: 800px;
+      width: 400px;
       border-radius: 5px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
       padding: 20px;
       position: relative;
       transition: all 0.8s ease 0s;
+   }
+
+   &__popup__form {
+      width: 400px;
    }
 
    &__close {
@@ -674,7 +683,7 @@ body {
       transition: all 0.3s ease 0s;
    }
 
-   &__tiile {
+   &__title {
       text-align: center;
       font-family: 'Larsseit';
       font-weight: 700;
@@ -718,6 +727,12 @@ body {
    }
 
    &__footer {}
+
+   textarea {
+      width: 100%;
+      // max-width: 500px; // вместо 500px = 100% 
+      resize: none;
+   }
 
 }
 
