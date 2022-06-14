@@ -83,7 +83,7 @@ h6 {
 }
 
 body {
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   font-size: 16px;
 }
 
@@ -94,32 +94,49 @@ body {
 
 .wrapper {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
 .content {
   -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   overflow: hidden;
 }
 
 .header {
-  background: #F4F9E2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50px;
 }
+
+.header__container {
+  max-width: 1117px;
+  margin: 0 auto;
+  background-color: #22356F;
+}
+
 .header__row {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
 .header__logo {
   padding: 27px 0px;
   font-size: 24px;
@@ -127,9 +144,11 @@ body {
   letter-spacing: -0.035em;
   color: #62D0DF;
 }
+
 .header__nav {
   position: relative;
 }
+
 .header__list {
   position: absolute;
   z-index: 22;
@@ -137,21 +156,26 @@ body {
   right: -189px;
   padding: 38px 0px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
+
 .header__list a {
   margin-right: 38px;
   font-size: 14px;
   line-height: 16px;
   color: #22356F;
 }
+
 .header__list a:hover {
   color: #FAB63E;
   -webkit-transition: all 0.3s;
@@ -160,28 +184,34 @@ body {
   border-bottom: 1px solid black;
   padding-bottom: 5px;
 }
+
 .header__list li:last-child {
   margin-right: 0px;
 }
+
 .header__button {
   padding: 35px 0px 9px 0px;
   position: relative;
   z-index: 3;
 }
+
 .header__button a {
   padding: 20px 30px;
   background: #62D0DF;
-  border-radius: 50px;
+  -webkit-border-radius: 50px;
+          border-radius: 50px;
   font-size: 14px;
   line-height: 16px;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   color: #FFFFFF;
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   font-weight: 700;
   text-transform: uppercase;
 }
+
 .header__button a:hover {
   background-color: #FAB63E;
   -webkit-transition: all 0.4s ease-in;
@@ -189,55 +219,77 @@ body {
   transition: all 0.4s ease-in;
 }
 
-.main {
-  background: #F4F9E2;
+.page__main {
+  max-width: 1145px;
+  margin: 0 auto;
 }
-.main__row {
+
+.main {
+  padding-bottom: 80px;
+}
+
+.main__container {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.main__body {
-  max-width: 484px;
-  margin-bottom: 75px;
+
+.main__content {
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+  padding-bottom: 75px;
+  max-width: 420px;
 }
-.main__logo {
+
+.main__title {
   padding: 154px 0px 53px 0px;
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   font-weight: 700;
   font-size: 24px;
   line-height: 27px;
   letter-spacing: -0.035em;
   color: #62D0DF;
 }
-.main__title {
-  font-family: "Larsseit";
+
+.main__subtitle {
+  font-family: 'Larsseit';
   font-weight: normal;
-  font-size: 48px;
+  font-size: 39px;
   line-height: 53px;
   letter-spacing: -0.035em;
   color: #22356F;
 }
+
 .main__text {
   padding: 82px 0px 60px 0px;
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   font-weight: 300;
   font-size: 24px;
-  line-height: 42px;
+  line-height: 31px;
   color: #22356F;
-  text-align: justify;
 }
-.main__button {
+
+.action-main {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
+
 .main__btn {
   padding: 10px 30px;
   margin-right: 10px;
@@ -250,31 +302,38 @@ body {
   color: #FAB63E;
   background: inherit;
 }
-.main .active, .main__btn:hover {
+
+.main__btn:hover {
   background: #FAB63E;
   color: white;
-  -webkit-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
 }
-.main__figure {
-  position: relative;
+
+.main__decor {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 40%;
+      -ms-flex: 0 1 40%;
+          flex: 0 1 40%;
 }
-.main__figure-block {
-  position: absolute;
-  top: -245px;
-  left: 260px;
+
+.main__imeges {
+  margin-right: -173px;
 }
-.main__figure-img {
-  position: absolute;
-  z-index: 2;
-  top: -96px;
-  left: 96px;
+
+.main__imeges img {
+  max-width: 642px;
+}
+
+.page {
+  background-color: #F4F9E2;
 }
 
 .why {
   background: url("../images/person_sec2.png") no-repeat center right, #62D0DF 70%;
 }
+
 .why__title {
   padding: 154px 0px 75px 0px;
   font-family: "Larsseit";
@@ -282,16 +341,17 @@ body {
   line-height: 27px;
   letter-spacing: -0.006em;
   color: #FFFFFF;
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   font-weight: 700;
 }
+
 .why__subtitle {
-  width: 555px;
+  max-width: 555px;
   font-family: "Larsseit";
   font-size: 24px;
   line-height: 35px;
   color: #FFFFFF;
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   font-weight: 500;
   padding: 0px 0px 95px 0px;
 }
@@ -299,19 +359,24 @@ body {
 .about {
   position: relative;
 }
+
 .about__row {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   padding: 150px 0px 70px 0px;
 }
+
 .about__title {
   position: absolute;
   left: 123px;
@@ -324,12 +389,16 @@ body {
   text-transform: uppercase;
   color: #22356F;
 }
+
+.about__text {
+  max-width: 554px;
+}
+
 .about__text p {
   font-size: 24px;
   font-family: "Larsseit";
   font-weight: normal;
   color: #22356F;
-  min-width: 554px;
 }
 
 .-webkit-input-placeholder {
@@ -338,22 +407,28 @@ body {
 
 .columns__row {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 120px;
 }
+
 .columns__body {
   width: 25%;
   -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
+
 .columns__title {
   text-align: center;
   font-family: "Larsseit";
@@ -365,6 +440,7 @@ body {
   color: rgba(34, 53, 111, 0.5);
   padding-bottom: 60px;
 }
+
 .columns__list {
   font-family: "Larsseit";
   font-weight: normal;
@@ -376,73 +452,95 @@ body {
   display: list-item;
   list-style-position: inside;
 }
+
 .columns__list:nth-child(2) {
   letter-spacing: 0em;
 }
+
 .columns__row hr {
   max-width: 90%;
   border-bottom: 1px solid #FFF;
   margin: 93px 52px 0px 52px;
 }
+
 .columns__list::marker {
   color: #FAB63E;
 }
+
 .columns__body:nth-child(1) {
   background: #FFE2DE;
 }
+
 .columns__body:nth-child(2) {
   background: #C4E769;
 }
+
 .columns__body:nth-child(3) {
   background: #62D0DF;
 }
+
 .columns__body:nth-child(4) {
   background: #0052C1;
 }
 
 .select__rows {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
+
 .select__cols {
   -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
   width: 33.333%;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
+
 .select__cols:nth-child(1) {
   background-color: #22356F;
 }
+
 .select__cols:nth-child(2) {
   background-color: #0052C1;
 }
+
 .select__cols:nth-child(3) {
   background: url("../images/eat.png") center no-repeat;
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
 }
+
 .select__cols:nth-child(4) {
   background: #62D0DF;
 }
+
 .select__cols:nth-child(5) {
   background: #DEE1FF;
 }
+
 .select__cols:nth-child(6) {
   background: #8F00FF;
 }
+
 .select__cols hr {
   max-width: 80%;
   border-bottom: 1px solid #FFF;
   margin: 93px 70px 0px 68px;
 }
+
 .select__title {
   display: list-item;
   list-style-position: inside;
@@ -454,9 +552,11 @@ body {
   color: #fff;
   padding: 30px 0px 323px 72px;
 }
+
 .select__title::marker {
   color: #E9B730;
 }
+
 .select__title:hover {
   color: #E9B730;
   -webkit-transition: all 0.3s ease;
@@ -466,22 +566,28 @@ body {
 
 .more__row {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 0;
+  -webkit-flex: 0 1 33.333%;
       -ms-flex: 0 1 33.333%;
           flex: 0 1 33.333%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   margin-top: 22px 0px;
 }
+
 .more__columns {
   width: 33.333%;
 }
+
 .more__title {
   padding: 59px 0px 0px 105px;
   font-family: "Larsseit";
@@ -491,6 +597,7 @@ body {
   letter-spacing: -0.03em;
   color: #22356F;
 }
+
 .more__title:hover {
   color: #62D0DF;
   cursor: pointer;
@@ -498,6 +605,7 @@ body {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
 .more__body {
   padding: 37px 77px 42px 105px;
   font-family: "Larsseit";
@@ -511,15 +619,19 @@ body {
 .help {
   margin-top: 40px;
 }
+
 .help__row {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
 }
+
 .help__title {
   padding: 103px 0px 225px 105px;
   font-size: 16px;
@@ -530,6 +642,7 @@ body {
   font-family: "Larsseit";
   font-weight: 500;
 }
+
 .help__description {
   padding: 0px 174px 160px 105px;
   font-family: "Larsseit";
@@ -539,12 +652,15 @@ body {
   letter-spacing: -0.01em;
   color: #22356F;
 }
+
 .help__description a {
   color: #62D0DF;
 }
+
 .help__description a:hover {
   text-decoration: underline;
 }
+
 .help__footer a {
   padding: 0px 0px 42px 105px;
   font-family: "Larsseit";
@@ -552,14 +668,17 @@ body {
   font-size: 16px;
   line-height: 23px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   letter-spacing: 0.1em;
   color: #FAB63E;
 }
+
 .help__footer a:hover {
   color: #62D0DF;
   -webkit-transition: all 0.3s ease;
@@ -569,20 +688,25 @@ body {
 
 .ready__row {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   background: #22356F;
 }
+
 .ready__body {
   margin: 103px 200px 35px 180px;
 }
+
 .ready__title {
   font-family: "Larsseit";
   font-weight: 500;
@@ -592,6 +716,7 @@ body {
   color: #FFFFFF;
   padding-bottom: 230px;
 }
+
 .ready__subitle {
   font-family: "Larsseit";
   font-weight: 700;
@@ -600,6 +725,7 @@ body {
   letter-spacing: -0.01em;
   color: #FFFFFF;
 }
+
 .ready__text {
   font-family: "Larsseit";
   font-weight: 300;
@@ -609,6 +735,7 @@ body {
   padding: 70px 0px;
   color: #FFFFFF;
 }
+
 .ready__footer a {
   font-family: "Larsseit";
   font-weight: 300;
@@ -616,14 +743,17 @@ body {
   font-size: 16px;
   line-height: 23px;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   letter-spacing: 0.1em;
   color: #62D0DF;
 }
+
 .ready__footer a:hover {
   color: #fff;
   -webkit-transition: all 0.3s ease;
@@ -633,23 +763,29 @@ body {
 
 .contacts__row {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin: 0px -11.5px;
 }
+
 .contacts__body {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   margin: 98px 40px 94px 64px;
 }
+
 .contacts__column {
   -webkit-box-flex: 0;
+  -webkit-flex: 0 1 240px;
       -ms-flex: 0 1 240px;
           flex: 0 1 240px;
   padding: 0px 11.5px;
   margin: 0px 70px 0px 0px;
 }
+
 .contacts__title {
   font-family: "Larsseit";
   font-weight: 700;
@@ -660,6 +796,7 @@ body {
   color: #22356F;
   padding-bottom: 48px;
 }
+
 .contacts__more {
   font-family: "Larsseit";
   font-weight: 500;
@@ -668,9 +805,11 @@ body {
   letter-spacing: -0.006em;
   color: rgba(34, 53, 111, 0.5);
 }
+
 .contacts__state {
   padding-bottom: 37px;
 }
+
 .contacts__more p:first-child {
   width: 170px;
 }
@@ -678,9 +817,11 @@ body {
 .footer {
   background: #62D0DF;
 }
+
 .footer__row {
   padding: 32px 0px 26px 30px;
 }
+
 .footer__text {
   font-family: "Larsseit";
   font-weight: 300;
@@ -706,24 +847,30 @@ body {
   -o-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
 }
+
 .popup__body {
   min-height: 100%;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   padding: 30px 10px;
 }
+
 .popup__content {
   background-color: #fff;
   color: #000;
   width: 400px;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   padding: 20px;
@@ -732,9 +879,11 @@ body {
   -o-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
 }
+
 .popup__popup__form {
   width: 400px;
 }
+
 .popup__close {
   position: absolute;
   right: 10px;
@@ -742,15 +891,17 @@ body {
   font-size: 20px;
   color: #000;
 }
+
 .popup__close:hover {
   color: #ee5252;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
+
 .popup__title {
   text-align: center;
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   font-weight: 700;
   font-size: 24px;
   line-height: 27px;
@@ -758,20 +909,24 @@ body {
   color: #62D0DF;
   margin-top: 15px;
 }
+
 .popup__modal {
   margin-top: 30px;
 }
+
 .popup__form {
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   font-weight: 300;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
   width: 100%;
   margin-bottom: 10px;
 }
+
 .popup__btn {
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   font-weight: 700;
   background: #62D0DF;
   color: #ffff;
@@ -779,43 +934,49 @@ body {
   line-height: 27px;
   letter-spacing: 0.035em;
   padding: 10px;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
   width: 100%;
 }
+
 .popup__btn:hover {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   background-color: #FAB63E;
 }
+
 .popup textarea {
   width: 100%;
   resize: none;
 }
 
 @font-face {
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   src: url("../fonts/Larsseit-Bold.eot");
   src: local("☺"), url("fonts/Larsseit-Bold.woff") format("woff"), url("fonts/Larsseit-Bold.ttf") format("truetype"), url("fonts/Larsseit-Bold.svg") format("svg");
   font-weight: 700;
   font-style: normal;
 }
+
 @font-face {
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   src: url("../fonts/Larsseit-Light.eot");
   src: local("☺"), url("fonts/Larsseit-Light.woff") format("woff"), url("fonts/Larsseit-Light.ttf") format("truetype"), url("fonts/Larsseit-Light.svg") format("svg");
   font-weight: 300;
   font-style: normal;
 }
+
 @font-face {
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   src: url("../fonts/Larsseit-Medium.eot");
   src: local("☺"), url("fonts/Larsseit-Medium.woff") format("woff"), url("fonts/Larsseit-Medium.ttf") format("truetype"), url("fonts/Larsseit-Medium.svg") format("svg");
   font-weight: 500;
   font-style: normal;
 }
+
 @font-face {
-  font-family: "Larsseit";
+  font-family: 'Larsseit';
   src: url("../fonts/Larsseit-Regular.eot");
   src: local("☺"), url("fonts/Larsseit-Regular.woff") format("woff"), url("fonts/Larsseit-Regular.ttf") format("truetype"), url("fonts/Larsseit-Regular.svg") format("svg");
   font-weight: normal;

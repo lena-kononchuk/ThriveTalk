@@ -25,7 +25,18 @@ body {
 
 // header section
 .header {
-   background: #F4F9E2;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 50px;
+
+   // background: #F4F9E2;
+   &__container {
+      max-width: 1117px;
+      margin: 0 auto;
+      background-color: #22356F;
+   }
 
    &__row {
       display: flex;
@@ -99,92 +110,97 @@ body {
 }
 
 //main section
+.page__main {
+   max-width: 1145px;
+   margin: 0 auto;
+}
+
 .main {
+   padding-bottom: 80px;
+}
 
-   background: #F4F9E2;
+.main__container {
+   display: flex;
+   justify-content: space-between;
+}
 
-   &__info {}
+.main__content {
+   align-self: flex-end;
+   padding-bottom: 75px;
+   max-width: 420px;
+}
 
-   &__row {
-      display: flex;
-   }
+.main__title {
+   padding: 154px 0px 53px 0px;
+   font-family: 'Larsseit';
+   font-weight: 700;
+   font-size: 24px;
+   line-height: 27px;
+   letter-spacing: -0.035em;
+   color: #62D0DF;
+}
 
-   &__body {
-      max-width: 484px;
-      margin-bottom: 75px;
-   }
+.main__subtitle {
+   font-family: 'Larsseit';
+   font-weight: normal;
+   font-size: 39px;
+   line-height: 53px;
+   letter-spacing: -0.035em;
+   color: #22356F;
+}
 
-   &__logo {
-      padding: 154px 0px 53px 0px;
-      font-family: 'Larsseit';
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 27px;
-      letter-spacing: -0.035em;
-      color: #62D0DF;
-   }
+.main__text {
+   padding: 82px 0px 60px 0px;
+   font-family: 'Larsseit';
+   font-weight: 300;
+   font-size: 24px;
+   line-height: 31px;
+   color: #22356F;
 
-   &__title {
-      font-family: 'Larsseit';
-      font-weight: normal;
-      font-size: 48px;
-      line-height: 53px;
-      letter-spacing: -0.035em;
-      color: #22356F;
-   }
+}
 
-   &__text {
-      padding: 82px 0px 60px 0px;
-      font-family: 'Larsseit';
-      font-weight: 300;
-      font-size: 24px;
-      line-height: 42px;
-      color: #22356F;
-      text-align: justify;
-   }
 
-   &__button {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-   }
+.main__action {}
 
-   &__btn {
-      padding: 10px 30px;
-      margin-right: 10px;
-      font-family: "Larsseit";
-      font-weight: 500;
-      text-transform: uppercase;
-      font-size: 16px;
-      line-height: 23px;
-      letter-spacing: 0.1em;
-      color: #FAB63E;
-      background: inherit;
-   }
+.action-main {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+}
 
-   .active,
-   &__btn:hover {
-      background: #FAB63E;
-      color: white;
-      transition: all 0.3s ease-in;
-   }
+.main__btn {
+   padding: 10px 30px;
+   margin-right: 10px;
+   font-family: "Larsseit";
+   font-weight: 500;
+   text-transform: uppercase;
+   font-size: 16px;
+   line-height: 23px;
+   letter-spacing: 0.1em;
+   color: #FAB63E;
+   background: inherit;
+}
 
-   &__figure {
-      position: relative;
-   }
+.main__btn:hover {
+   background: #FAB63E;
+   color: white;
+   transition: all 0.4s ease-in;
+}
 
-   &__figure-block {
-      position: absolute;
-      top: -245px;
-      left: 260px;
-   }
+.main__decor {
+   flex: 0 1 40%;
+}
 
-   &__figure-img {
-      position: absolute;
-      z-index: 2;
-      top: -96px;
-      left: 96px;
-   }
+.main__imeges {
+   margin-right: -173px;
+}
+
+.main__imeges img {
+   max-width: 642px;
+}
+
+.page {
+   background-color: #F4F9E2;
 }
 
 //why section
@@ -205,7 +221,7 @@ body {
    }
 
    &__subtitle {
-      width: 555px;
+      max-width: 555px;
       font-family: "Larsseit";
       font-size: 24px;
       line-height: 35px;
@@ -241,12 +257,15 @@ body {
       color: #22356F;
    }
 
+   &__text {
+      max-width: 554px;
+   }
+
    &__text p {
       font-size: 24px;
       font-family: "Larsseit";
       font-weight: normal;
       color: #22356F;
-      min-width: 554px;
    }
 
 }
