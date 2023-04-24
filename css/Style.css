@@ -579,9 +579,10 @@ ul {
       flex-wrap: wrap;
 }
 .select__rows :nth-child(n) {
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: 100%;
+  min-height: 450px;
   -webkit-transition: all 250ms ease-in-out;
   -o-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
@@ -598,6 +599,7 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 480px;
 }
 .select__cols:nth-child(1) {
   background-color: #22356f;
@@ -650,7 +652,7 @@ ul {
   line-height: 34px;
   letter-spacing: -0.006em;
   color: #fff;
-  padding: 30px 0px 323px 72px;
+  padding: 30px 0px 0px 72px;
 }
 .select__title::marker {
   color: #e9b730;
