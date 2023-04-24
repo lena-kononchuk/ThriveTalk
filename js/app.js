@@ -16,6 +16,6 @@ span.onclick = function (e) {
 window.onclick = function (event) {
    if (event.target == modal) {
       modal.style.visibility = "hidden";
-      // modal.style.opacity = "0"
+      modal.style.opacity = "0"
    }
 }

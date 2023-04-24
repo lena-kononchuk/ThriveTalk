@@ -1,26 +1,13 @@
-@import "null";
-
-body {
-   font-family: 'Larsseit';
-   font-size: 16px;
-}
+@import "./base/common";
+@import "./base/normalize";
+@import "./base/reset";
 
 .container {
-   max-width: 1145px;
+   max-width: 1045px;
    margin: 0 auto;
+   padding-left: 20px;
+   padding-right: 20px;
    // overflow: hidden;
-
-}
-
-.wrapper {
-   // min-height: 100%;
-   display: flex;
-   flex-direction: column;
-}
-
-.content {
-   flex: 1 1 auto;
-   overflow: hidden;
 }
 
 // header section
@@ -29,55 +16,54 @@ body {
    top: 0;
    left: 0;
    width: 100%;
-   z-index: 50px;
+   min-height: 90px;
+   background-color: #f4f9e2;
 
    // background: #F4F9E2;
    &__container {
       max-width: 1117px;
       margin: 0 auto;
-      background-color: #22356F;
+      background-color: #22356f;
+      // position: relative;
    }
 
    &__row {
       display: flex;
       justify-content: space-between;
+      align-items: flex-end;
+      padding: 30px 0;
    }
-
-   &__logo {
-      padding: 27px 0px;
-      font-size: 24px;
-      line-height: 27px;
-      letter-spacing: -0.035em;
-      color: #62D0DF;
+   &__logo-img {
+      cursor: pointer;
+      z-index: 1;
+      position: relative;
    }
 
    &__nav {
       position: relative;
+      z-index: 1;
    }
 
    &__list {
-      position: absolute;
-      z-index: 22;
-      top: 0;
-      right: -189px;
-      padding: 38px 0px;
+      font-family: "Larsseit";
       display: flex;
+      font-weight: 500;
       align-items: center;
       justify-content: center;
    }
 
-   &__list a {
+   &__list li a {
       margin-right: 38px;
       font-size: 14px;
       line-height: 16px;
-      color: #22356F;
+      color: #22356f;
+      text-decoration: none;
+      cursor: pointer;
    }
 
-   &__list a:hover {
-      color: #FAB63E;
-      transition: all 0.3s;
-      border-bottom: 1px solid black;
-      padding-bottom: 5px;
+   &__list li a:hover {
+      color: #fab63e;
+      transition: color 250ms ease-in-out;
    }
 
    &__list li:last-child {
@@ -85,87 +71,79 @@ body {
    }
 
    &__button {
-      padding: 35px 0px 9px 0px;
+      // padding: 35px 0px 9px 0px;
       position: relative;
       z-index: 3;
    }
 
    &__button a {
       padding: 20px 30px;
-      background: #62D0DF;
+      background: #62d0df;
       border-radius: 50px;
       font-size: 14px;
-      line-height: 16px;
-      align-items: center;
-      color: #FFFFFF;
-      font-family: 'Larsseit';
+      line-height: 14px;
+      color: #ffffff;
+      font-family: "Larsseit";
       font-weight: 700;
       text-transform: uppercase;
+      text-decoration: none;
    }
 
    &__button a:hover {
-      background-color: #FAB63E;
-      transition: all 0.4s ease-in;
+      background-color: #fab63e;
+      transition: background-color 500ms ease-in-out;
    }
 }
 
 //main section
-.page__main {
-   max-width: 1145px;
-   margin: 0 auto;
-}
 
 .main {
    padding-bottom: 80px;
-}
-
-.main__container {
-   display: flex;
-   justify-content: space-between;
+   position: relative;
+   overflow: hidden;
 }
 
 .main__content {
    align-self: flex-end;
-   padding-bottom: 75px;
-   max-width: 420px;
+   // padding-bottom: 75px;
+   max-width: 484px;
+   font-family: "Larsseit";
+   font-weight: 700;
+   padding-top: 168px;
 }
 
 .main__title {
    padding: 154px 0px 53px 0px;
-   font-family: 'Larsseit';
-   font-weight: 700;
    font-size: 24px;
    line-height: 27px;
    letter-spacing: -0.035em;
-   color: #62D0DF;
+   color: #62d0df;
 }
 
 .main__subtitle {
-   font-family: 'Larsseit';
-   font-weight: normal;
-   font-size: 39px;
+   font-size: 48px;
    line-height: 53px;
    letter-spacing: -0.035em;
-   color: #22356F;
+   color: #22356f;
 }
 
 .main__text {
-   padding: 82px 0px 60px 0px;
-   font-family: 'Larsseit';
+   padding-top: 28px;
+   font-family: "Larsseit";
    font-weight: 300;
    font-size: 24px;
    line-height: 31px;
-   color: #22356F;
-
+   color: #22356f;
 }
 
-
-.main__action {}
+.main__action {
+}
 
 .action-main {
    display: flex;
    align-items: center;
    justify-content: flex-start;
+   padding-top: 30px;
 }
 
 .main__btn {
@@ -177,37 +155,49 @@ body {
    font-size: 16px;
    line-height: 23px;
    letter-spacing: 0.1em;
-   color: #FAB63E;
+   color: #fab63e;
    background: inherit;
+   border: none;
+   cursor: pointer;
 }
 
 .main__btn:hover {
-   background: #FAB63E;
+   background: #fab63e;
    color: white;
-   transition: all 0.4s ease-in;
+   transition: all 500ms ease-in-out;
 }
 
 .main__decor {
-   flex: 0 1 40%;
+   background-image: url("../images/Rectangle.png");
+   background-repeat: no-repeat;
+   width: 700px; /* задает ширину элемента */
+   height: 820px; /* задает высоту элемента */
+   position: absolute;
+   right: -100px;
+   top: -80px;
+   background-position: center;
+   background-size: contain;
+   background-repeat: no-repeat;
 }
-
+.main__decor-images {
+   position: absolute;
+   right: 99px;
+   top: 182px;
+}
 .main__imeges {
-   margin-right: -173px;
-}
-
-.main__imeges img {
-   max-width: 642px;
+   // margin-right: -173px;
 }
 
 .page {
-   background-color: #F4F9E2;
+   background-color: #f4f9e2;
 }
 
 //why section
 .why {
-   background: url("../images/person_sec2.png")no-repeat center right, #62D0DF 70%;
-
-   &__row {}
+   background: url("../images/person_sec2.png"), #62d0df;
+   background-position: top right, bottom left;
+   background-size: contain, cover;
+   background-repeat: no-repeat, repeat;
 
    &__title {
       padding: 154px 0px 75px 0px;
@@ -215,18 +205,17 @@ body {
       font-size: 36px;
       line-height: 27px;
       letter-spacing: -0.006em;
-      color: #FFFFFF;
-      font-family: 'Larsseit';
+      color: #ffffff;
+      font-family: "Larsseit";
       font-weight: 700;
    }
 
    &__subtitle {
       max-width: 555px;
       font-family: "Larsseit";
-      font-size: 24px;
-      line-height: 35px;
-      color: #FFFFFF;
-      font-family: 'Larsseit';
+      font-size: 20px;
+      line-height: 29px;
+      color: #ffffff;
       font-weight: 500;
       padding: 0px 0px 95px 0px;
    }
@@ -235,6 +224,7 @@ body {
 //about section
 .about {
    position: relative;
+   background-color: #ffffff;
 
    &__row {
       display: flex;
@@ -248,26 +238,25 @@ body {
       position: absolute;
       left: 123px;
       top: 150px;
-      font-family: "Larsseit";
-      font-weight: normal;
       font-size: 16px;
       line-height: 23px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #22356F;
+      color: #22356f;
    }
 
    &__text {
       max-width: 554px;
    }
 
-   &__text p {
+   &__text > p {
       font-size: 24px;
+      line-height: 34px;
+      letter-spacing: 0.005em;
       font-family: "Larsseit";
-      font-weight: normal;
-      color: #22356F;
+      font-weight: 500;
+      color: #22356f;
    }
-
 }
 
 .-webkit-input-placeholder {
@@ -276,7 +265,7 @@ body {
 
 //columns section
 .columns {
-
+   background-color: #ffffff;
    &__row {
       display: flex;
       margin-bottom: 120px;
@@ -287,6 +276,9 @@ body {
       flex: 0 1 auto;
       align-items: center;
       justify-content: center;
+      min-width: 25%;
+      min-height: 340px;
+      position: relative;
    }
 
    &__title {
@@ -298,58 +290,64 @@ body {
       line-height: 19px;
       letter-spacing: 0.06em;
       color: rgba(34, 53, 111, 0.5);
-      padding-bottom: 60px
+      padding-bottom: 60px;
    }
 
    &__list {
       font-family: "Larsseit";
-      font-weight: normal;
+      font-weight: 500;
       font-size: 32px;
       line-height: 34px;
       letter-spacing: -0.006em;
-      padding: 31px 0px 200px 52px;
-      color: #FFFFFF;
-      display: list-item;
-      list-style-position: inside;
+      color: #ffffff;
+      padding: 80px 0 0 54px;
    }
 
-   &__list:nth-child(2) {
-      letter-spacing: 0em;
-   }
+   // &__list:nth-child(n) {
+   //    letter-spacing: 0em;
+   // }
 
-   &__row hr {
-      max-width: 90%;
-      border-bottom: 1px solid #FFF;
-      margin: 93px 52px 0px 52px;
-   }
-
-   &__list::marker {
-      color: #FAB63E;
+   &__list::before {
+      content: " ";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      background-color: #fab63e;
+      margin-left: -30px;
+      margin-top: 10px;
+      border-radius: 50%;
    }
 
    &__body:nth-child(1) {
-      background: #FFE2DE;
+      background: #ffe2de;
    }
 
    &__body:nth-child(2) {
-      background: #C4E769;
+      background: #c4e769;
    }
 
    &__body:nth-child(3) {
-      background: #62D0DF;
+      background: #62d0df;
    }
 
    &__body:nth-child(4) {
-      background: #0052C1;
+      background: #0052c1;
    }
 }
 
 //select section
 .select {
-
+   background-color: #ffffff;
    &__rows {
       display: flex;
       flex-wrap: wrap;
+      :nth-child(n) {
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 100%;
+         transition: all 250ms ease-in-out;
+         cursor: pointer;
+      }
    }
 
    &__cols {
@@ -360,37 +358,52 @@ body {
    }
 
    &__cols:nth-child(1) {
-      background-color: #22356F;
+      background-color: #22356f;
+      :hover {
+         content: "";
+         background-image: url("../images/eat.png");
+      }
    }
 
    &__cols:nth-child(2) {
-      background-color: #0052C1;
+      background-color: #0052c1;
+      :hover {
+         content: "";
+         background-image: url("../images/eat.png");
+      }
    }
 
    &__cols:nth-child(3) {
-      background: url("../images/eat.png") center no-repeat;
-      background-size: cover;
+      background: #ffe2de;
+      :hover {
+         content: "";
+         background-image: url("../images/eat.png");
+      }
    }
 
    &__cols:nth-child(4) {
-      background: #62D0DF;
+      background: #62d0df;
+      :hover {
+         content: "";
+         background-image: url("../images/eat.png");
+      }
    }
 
    &__cols:nth-child(5) {
-      background: #DEE1FF;
+      background: #dee1ff;
+      :hover {
+         content: "";
+         background-image: url("../images/eat.png");
+      }
    }
 
    &__cols:nth-child(6) {
-      background: #8F00FF;
+      background: #8f00ff;
+      :hover {
+         content: "";
+         background-image: url("../images/eat.png");
+      }
    }
-
-   &__cols hr {
-      max-width: 80%;
-      border-bottom: 1px solid #FFF;
-      margin: 93px 70px 0px 68px;
-
-   }
-
 
    &__title {
       display: list-item;
@@ -405,19 +418,18 @@ body {
    }
 
    &__title::marker {
-      color: #E9B730;
+      color: #e9b730;
    }
 
    &__title:hover {
-      color: #E9B730;
+      color: #e9b730;
       transition: all 0.3s ease;
    }
-
 }
 
 //more section
 .more {
-
+   background-color: #ffffff;
    &__row {
       display: flex;
       flex: 0 1 33.333%;
@@ -438,14 +450,13 @@ body {
       line-height: 33px;
       letter-spacing: -0.03em;
 
-      color: #22356F;
+      color: #22356f;
    }
 
    &__title:hover {
-      color: #62D0DF;
+      color: #62d0df;
       cursor: pointer;
       transition: all 0.3s ease;
-
    }
 
    &__body {
@@ -456,83 +467,100 @@ body {
       line-height: 25px;
       letter-spacing: -0.03em;
       color: rgba(34, 53, 111, 0.5);
-
    }
 }
 
 //help section
 .help {
-   margin-top: 40px;
+   background-color: #ffffff;
+   padding-top: 40px;
 
    &__row {
       display: flex;
       flex-direction: row;
    }
 
-   &__background {}
+   &__background {
+      background-image: url("../images/person_sec3.png");
+      background-repeat: no-repeat;
 
-   &__body {}
+      background-position: left;
+      width: 30%;
+      background-repeat: no-repeat;
+   }
+
+   &__body {
+      padding: 103px 0 0 106px;
+   }
 
    &__title {
-      padding: 103px 0px 225px 105px;
+      // padding: 103px 0px 225px 105px;
       font-size: 16px;
       line-height: 12px;
       letter-spacing: 0.06em;
-      color: #22356F;
+      color: #22356f;
       text-transform: uppercase;
       font-family: "Larsseit";
       font-weight: 500;
    }
 
    &__description {
-      padding: 0px 174px 160px 105px;
+      padding-top: 240px;
+      max-width: 670px;
       font-family: "Larsseit";
       font-weight: 700;
       font-size: 36px;
       line-height: 53px;
       letter-spacing: -0.01em;
-      color: #22356F;
+      color: #22356f;
    }
 
    &__description a {
-      color: #62D0DF;
+      color: #62d0df;
+      text-decoration: none;
    }
 
    &__description a:hover {
-      text-decoration: underline;
+      color: #e9b730;
+      transition: color 250ms ease-in-out;
    }
 
-   &__footer a {
-      padding: 0px 0px 42px 105px;
+   &__footer {
+      padding-top: 90px;
+      padding-bottom: 10px;
       font-family: "Larsseit";
       font-weight: 500;
       font-size: 16px;
       line-height: 23px;
-      display: flex;
-      align-items: center;
       letter-spacing: 0.1em;
-      color: #FAB63E;
+      color: #fab63e;
+      a {
+         text-decoration: none;
+         color: #fab63e;
+         cursor: pointer;
+      }
    }
 
    &__footer a:hover {
-      color: #62D0DF;
-      transition: all 0.3s ease;
+      background-color: #fab63e;
+      color: #fff;
+      transition: all 500ms ease-in-out;
+      padding: 10px 0;
    }
 }
 
 //ready section
 .ready {
-
    &__row {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      background: #22356F;
+      background: #22356f;
    }
 
    &__body {
-      margin: 103px 200px 35px 180px;
-
+      padding: 103px 0 0 194px;
+      max-width: 560px;
    }
 
    &__title {
@@ -541,7 +569,7 @@ body {
       font-size: 16px;
       line-height: 12px;
       letter-spacing: 0.06em;
-      color: #FFFFFF;
+      color: #ffffff;
       padding-bottom: 230px;
    }
 
@@ -551,7 +579,7 @@ body {
       font-size: 64px;
       line-height: 94px;
       letter-spacing: -0.01em;
-      color: #FFFFFF;
+      color: #ffffff;
    }
 
    &__text {
@@ -561,7 +589,7 @@ body {
       line-height: 53px;
       letter-spacing: -0.005em;
       padding: 70px 0px;
-      color: #FFFFFF;
+      color: #ffffff;
    }
 
    &__footer a {
@@ -573,7 +601,7 @@ body {
       display: flex;
       align-items: center;
       letter-spacing: 0.1em;
-      color: #62D0DF;
+      color: #62d0df;
    }
 
    &__footer a:hover {
@@ -584,21 +612,19 @@ body {
 
 //contacts section
 .contacts {
-
+   background-color: #fff;
    &__row {
       display: flex;
-      margin: 0px -11.5px;
    }
 
    &__body {
       display: flex;
-      margin: 98px 40px 94px 64px;
+      padding: 98px 0 0 68px;
    }
 
    &__column {
-      flex: 0 1 240px;
-      padding: 0px 11.5px;
-      margin: 0px 70px 0px 0px;
+      flex: 0 0 240px;
+      padding-right: 40px;
    }
 
    &__title {
@@ -608,8 +634,8 @@ body {
       font-size: 14px;
       line-height: 11px;
       letter-spacing: -0.006em;
-      color: #22356F;
-      padding-bottom: 48px;
+      color: #22356f;
+      padding-bottom: 28px;
    }
 
    &__more {
@@ -622,168 +648,219 @@ body {
    }
 
    &__state {
-      padding-bottom: 37px;
+      padding-bottom: 20px;
    }
+   .contacts {
+      // .contacts__state-phone
 
+      &__state-phone {
+         font-style: 500;
+         font-weight: 400;
+         font-size: 14px;
+         line-height: 23px;
+         letter-spacing: -0.006em;
+         text-decoration: none;
+         color: rgba(34, 53, 111, 0.5);
+         :focus {
+            outline: none;
+         }
+      }
 
-   &__more p:first-child {
-      width: 170px;
+      // .contacts__state-mail
 
+      &__state-mail {
+         text-decoration: none;
+         font-size: 14px;
+         line-height: 23px;
+         letter-spacing: -0.006em;
+
+         color: #006dff;
+         :focus {
+            outline: none;
+         }
+      }
    }
 }
 
 //footer section
 .footer {
-   background: #62D0DF;
+   background: #62d0df;
 
    &__row {
-      padding: 32px 0px 26px 30px;
+      padding: 32px 0px 26px 0px;
    }
 
    &__text {
       font-family: "Larsseit";
-      font-weight: 300;
+      font-weight: 700;
       font-size: 14px;
       line-height: 11px;
       letter-spacing: -0.006em;
-      color: #FFFFFF;
+      color: #ffffff;
    }
 }
 
 //popup section
 .popup {
+   // .popup__body
    position: fixed;
+   bottom: 0;
+   left: 0;
    width: 100%;
    height: 100%;
-   background-color: rgba(0, 0, 0, 0.8);
-   top: 0;
-   left: 0;
-   z-index: 25;
+   background: rgba(0, 0, 0, 0.8);
+   // backdrop-filter: blur(2.5px);
+   z-index: 999;
    opacity: 0;
    visibility: hidden;
    overflow-y: auto;
    overflow-x: hidden;
    transition: all 0.8s ease 0s;
-
+   // pointer-events: none;
 
    &__body {
-      min-height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px 10px;
-   }
-
-   &__content {
-      background-color: #fff;
-      color: #000;
-      width: 400px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 530px;
+      background-color: #e5e5e5;
       border-radius: 5px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      position: relative;
+      color: #000;
       transition: all 0.8s ease 0s;
    }
 
-   &__popup__form {
-      width: 400px;
+   // .popup__content
+
+   &__content {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: "Larsseit";
+      font-weight: 700;
    }
+
+   // .popup__close
 
    &__close {
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      font-size: 20px;
-      color: #000;
    }
 
-   &__close:hover {
-      color: rgb(238, 82, 82);
-      transition: all 0.3s ease 0s;
-   }
+   // .popup__tiile
 
-   &__title {
-      text-align: center;
-      font-family: 'Larsseit';
+   &__tiile {
+      font-family: "Larsseit";
       font-weight: 700;
       font-size: 24px;
       line-height: 27px;
       letter-spacing: -0.035em;
-      color: #62D0DF;
-      margin-top: 15px;
+      color: #22356f;
+      padding-top: 10px;
    }
+
+   // .popup__modal
 
    &__modal {
-      margin-top: 30px;
+      min-width: 360px;
+      display: flex;
+      flex-direction: column;
+      padding: 60px 0;
+      input::placeholder,
+      textarea::placeholder {
+         font-family: "Larsseit";
+         font-weight: 300;
+      }
    }
+
+   // .popup__form
 
    &__form {
-      font-family: 'Larsseit';
-      font-weight: 300;
-      padding: 10px;
+      padding: 20px 0 5px 5px;
+      margin-bottom: 20px;
+      background-color: #e5e5e5;
+      outline: none;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      width: 100%;
-      margin-bottom: 10px;
+      resize: none;
+      cursor: pointer;
+      border-radius: 5px;
    }
 
+   // .popup__footer
+
+   &__footer {
+      padding-top: 30px;
+   }
+
+   // .popup__btn
+
    &__btn {
-      font-family: 'Larsseit';
+      font-family: "Larsseit";
       font-weight: 700;
-      background: #62D0DF;
+      width: 100%;
+      background: #62d0df;
       color: #ffff;
+      border: 0;
       font-size: 16px;
       line-height: 27px;
       letter-spacing: 0.035em;
       padding: 10px;
+      text-transform: uppercase;
+      cursor: pointer;
       border-radius: 5px;
-      width: 100%;
    }
-
-   &__btn:hover {
-      transition: all 0.3s ease;
-      background-color: #FAB63E;
+   .popup__btn:hover {
+      background-color: #fab63e;
+      transition: background-color 500ms ease-in-out;
    }
-
-   &__footer {}
-
-   textarea {
-      width: 100%;
-      // max-width: 500px; // вместо 500px = 100% 
-      resize: none;
+   .close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: 700;
+      color: #22356f;
+      cursor: pointer;
+      :hover {
+         color: rgb(238, 82, 82);
+         transition: color 0.3s ease 0s;
+      }
    }
-
 }
-
 //font-family section
 @font-face {
-   font-family: 'Larsseit';
-   src: url('../fonts/Larsseit-Bold.eot');
-   src: local('☺'), url('fonts/Larsseit-Bold.woff') format('woff'), url('fonts/Larsseit-Bold.ttf') format('truetype'), url('fonts/Larsseit-Bold.svg') format('svg');
+   font-family: "Larsseit";
+   src: url("../fonts/Larsseit-Bold.eot");
+   src: local("☺"), url("../fonts/Larsseit-Bold.woff") format("woff"),
+      url("../fonts/Larsseit-Bold.ttf") format("truetype"), url("../fonts/Larsseit-Bold.svg") format("svg");
    font-weight: 700;
    font-style: normal;
 }
 
 @font-face {
-   font-family: 'Larsseit';
-   src: url('../fonts/Larsseit-Light.eot');
-   src: local('☺'), url('fonts/Larsseit-Light.woff') format('woff'), url('fonts/Larsseit-Light.ttf') format('truetype'), url('fonts/Larsseit-Light.svg') format('svg');
+   font-family: "Larsseit";
+   src: url("../fonts/Larsseit-Light.eot");
+   src: local("☺"), url("../fonts/Larsseit-Light.woff") format("woff"),
+      url("../fonts/Larsseit-Light.ttf") format("truetype"), url("../fonts/Larsseit-Light.svg") format("svg");
    font-weight: 300;
    font-style: normal;
 }
 
 @font-face {
-   font-family: 'Larsseit';
-   src: url('../fonts/Larsseit-Medium.eot');
-   src: local('☺'), url('fonts/Larsseit-Medium.woff') format('woff'), url('fonts/Larsseit-Medium.ttf') format('truetype'), url('fonts/Larsseit-Medium.svg') format('svg');
+   font-family: "Larsseit";
+   src: url("../fonts/Larsseit-Medium.eot");
+   src: local("☺"), url("../fonts/Larsseit-Medium.woff") format("woff"),
+      url("../fonts/Larsseit-Medium.ttf") format("truetype"), url("../fonts/Larsseit-Medium.svg") format("svg");
    font-weight: 500;
    font-style: normal;
 }
 
 @font-face {
-   font-family: 'Larsseit';
-   src: url('../fonts/Larsseit-Regular.eot');
-   src: local('☺'), url('fonts/Larsseit-Regular.woff') format('woff'), url('fonts/Larsseit-Regular.ttf') format('truetype'), url('fonts/Larsseit-Regular.svg') format('svg');
+   font-family: "Larsseit";
+   src: url("../fonts/Larsseit-Regular.eot");
+   src: local("☺"), url("../fonts/Larsseit-Regular.woff") format("woff"),
+      url("../fonts/Larsseit-Regular.ttf") format("truetype"), url("../fonts/Larsseit-Regular.svg") format("svg");
    font-weight: normal;
    font-style: normal;
 }
